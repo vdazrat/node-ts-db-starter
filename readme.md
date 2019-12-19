@@ -67,6 +67,10 @@ After running the db
 Login to adminer http://localhost:8081/
 
 
+![image](https://raw.githubusercontent.com/vdazrat/node-ts-db-starter/master/images/adminer.png)
+
+
+
 
 ## Project structure
 
