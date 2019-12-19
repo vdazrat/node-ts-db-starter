@@ -62,7 +62,11 @@ npm run db:rollback
 ```
 
   
-  
+## View the database in adminer
+After running the db
+Login to adminer http://localhost:8081/
+
+
 
 ## Project structure
 
