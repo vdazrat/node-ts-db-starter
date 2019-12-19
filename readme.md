@@ -7,6 +7,10 @@ npm install
 You need to have docker installed
 [https://docs.docker.com/v17.09/docker-for-mac/install/](https://docs.docker.com/v17.09/docker-for-mac/install/)
 
+## Create .env file
+Copy the contents from .env.example to .env
+
+
 ## Start the db
 
   
@@ -25,11 +29,14 @@ npm run db:start
 
 ## Create a new table
 
+
+  npm run db:createMigration <migration_name>
+  
   
 
 ```
 
-npm run db:createMigration create_user
+npm run db:createMigration create_post
 
 ```
 
