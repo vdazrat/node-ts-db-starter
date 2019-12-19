@@ -1,11 +1,12 @@
 import path from 'path'
 import Knex from 'knex'
+import { Model } from 'objection'
 import * as dotenv from 'dotenv'
 
 dotenv.config({ path: path.resolve(__dirname, '../.env') })
 const migrationDir = path.resolve(__dirname, '../src/database/migrations')
 
-console.log('running ', process.env.DB_CLIENT)
+console.log('Starting DB client - ', process.env.DB_CLIENT)
 
 const dbConfig: Knex.Config = {
   client: 'pg',
@@ -25,6 +26,8 @@ const dbConfig: Knex.Config = {
   },
 }
 
-export const knexConfig = Knex<any, any[]>(dbConfig)
+// initialize objection
+const knexConfig = Knex<any, any[]>(dbConfig)
+Model.knex(knexConfig)
 
 module.exports = dbConfig
