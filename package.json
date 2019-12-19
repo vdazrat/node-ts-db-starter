@@ -1,0 +1,31 @@
+{
+  "name": "ts-knex",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tsc": "tsc",
+    "dev": "ts-node-dev --respawn --transpileOnly ./src/server.ts",
+    "prod": "tsc && node ./build/server.js",
+    "db:start": "docker-compose -f docker-compose-dev.yml up",
+    "db:createMigration": "ts-node ./node_modules/.bin/knex --knexfile ./configs/knex.ts migrate:make -x ts",
+    "db:migrate": "ts-node ./node_modules/.bin/knex --knexfile ./configs/knex.ts migrate:latest",
+    "db:rollback": "ts-node ./node_modules/.bin/knex --knexfile ./configs/knex.ts migrate:rollback"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/bookshelf": "^1.0.0",
+    "@types/express": "^4.17.2",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "knex": "^0.20.4",
+    "pg": "^7.15.1",
+    "ts-node-dev": "^1.0.0-pre.44",
+    "typescript": "^3.7.3"
+  },
+  "devDependencies": {
+    "prettier": "^1.19.1"
+  }
+}

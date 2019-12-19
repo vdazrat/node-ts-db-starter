@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  db:
+    build: ./src/database
+    image: a-dev-db:latest
+    container_name: a-dev-db
+    env_file: ./.env
+    volumes:
+      - a-dev-db:/var/lib/postgresql/data
+    ports:
+    - 5432:5432
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8081:8080
+
+volumes:
+  a-dev-db:
+    driver: local
