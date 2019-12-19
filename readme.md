@@ -95,7 +95,7 @@ src
 
 └───domain # Domain level entities
 
-└───entities # Interfaces for domain entities
+    └───entities # Interfaces for domain entities
 
 └───services # All the business logic is here
 
